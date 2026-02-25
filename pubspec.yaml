@@ -1,0 +1,59 @@
+name: mind
+description: Voice-first British AI productivity companion.
+publish_to: 'none'
+version: 5.0.0+5
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # ── Core AI & Voice ──────────────────────────────────────────
+  http: ^1.1.0
+  speech_to_text: ^7.3.0
+  flutter_tts: ^3.8.5
+
+  # ── Background Service ───────────────────────────────────────
+  # Runs MIND as a foreground service when app is closed.
+  # Required for earphone nudges in background.
+  flutter_foreground_task: ^8.0.0
+
+  # ── Audio Session & Earphone Detection ───────────────────────
+  # Detects wired/bluetooth earphone state in real-time.
+  # Routes TTS to earphone only — never uninvited speaker output.
+  audio_session: ^0.1.18
+
+  # ── Local Database — Memory Layers ───────────────────────────
+  # SQLite for episodic, semantic, and procedural memory stores.
+  sqflite: ^2.3.2
+  path: ^1.9.0
+  path_provider: ^2.1.2
+
+  # ── Encryption ───────────────────────────────────────────────
+  # AES-256-CBC for all local data at rest.
+  encrypt: ^5.0.3
+  # Secure Enclave / Android Keystore for encryption key storage.
+  flutter_secure_storage: ^9.0.0
+
+  # ── Digital Wellbeing ────────────────────────────────────────
+  # Android UsageStatsManager wrapper.
+  # iOS: limited — approximated from available signals.
+  app_usage: ^4.0.1
+
+  # ── Permissions ──────────────────────────────────────────────
+  permission_handler: ^11.3.0
+
+  # ── State & Persistence ──────────────────────────────────────
+  shared_preferences: ^2.2.2
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.0
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/logo_mind.svg

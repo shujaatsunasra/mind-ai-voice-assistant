@@ -1,0 +1,6 @@
+# flutter_launcher_icons configuration
+flutter_icons:
+  android: true
+  ios: true
+  image_path: "assets/logo_mind.png"
+  remove_alpha_ios: true
